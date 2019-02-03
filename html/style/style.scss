@@ -11,9 +11,9 @@
 	$es-font      : 'Ubuntu', sans-serif;				//英語
 	$js-font      : 'Noto Sans TC', sans-serif;	//日本語
 
-/**** ↓ページscss↓ ****/
+/*** 共通クラス ***/
 body {
-	/** 共通クラス **/
+
 	background-color: $main-color;	//デフォルト背景色
 	color: $text-color;							//デフォルト文字カラー
 	font-family: $es-font;
@@ -30,7 +30,11 @@ body {
 			opacity: $opacity;
 		}
 	}
-	/** ↑共通クラス↑ **/
+}
+
+/**** ↓ページscss↓ ****/
+body {
+	margin: 0;
 
 	.wrapper {
 
@@ -63,6 +67,38 @@ body {
 		//コンテンツ
 		#main_cont {
 
+		}
+	}
+}
+
+/*
+ ** 開発中
+ *TODO あとで削除
+*/
+.wrapper {
+	position: relative;
+
+	.unchi {
+		font-size: 11px;
+		letter-spacing: 0;
+		margin-top: 10px;
+	}
+
+	footer {
+		background-color: $red_color;
+		bottom: 0;
+		font-weight: 700;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		opacity: $opacity;
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+
+		&::before {
+			content: '絶賛開発中です。またきてね。';
+			padding: 5px;
 		}
 	}
 }
