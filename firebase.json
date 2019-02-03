@@ -1,5 +1,9 @@
 {
 	"hosting": {
 		"public":"html"
-	}
+	},
+
+	"projects": {
+    "staging": "$FIREBASE_PROJECT"
+  }
 }
