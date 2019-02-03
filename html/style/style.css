@@ -1,2 +1,2 @@
-body{color:blue}body p{color:red}body p span{color:green}
+body p a{color:red;text-decoration:none}body p a:hover{opacity:.7}
 /*# sourceMappingURL=style.css.map */
