@@ -1,10 +1,10 @@
 {
-	"hosting":{
+	"hosting": {
 		"public":"html"
-	}
-}
-{
-  "projects": {
-    "staging": $FIREBASE_PROJECT
+	},
+
+	"projects": {
+    "staging": "$FIREBASE_PROJECT"
   }
+
 }
