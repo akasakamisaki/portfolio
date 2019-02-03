@@ -15,5 +15,5 @@ deploy:
   provider: firebase
   skip_cleanup: true
   token:
-    secure: $FIREBASE_TOKEN
-  project: $FIREBASE_PROJECT
+    secure: FIREBASE_TOKEN
+  project: FIREBASE_PROJECT
