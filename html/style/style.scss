@@ -1,11 +1,19 @@
+/**** 定数宣言 ****/
+//カラー
+	$main-color : blue;
+	$sub-color  : red;
+//hover
+	$opacity : .7;
+
+/**** ↓コンテンツscss↓ ****/
 body {
 	p {
 		a {
-			color: red;
+			color: $main-color;
 			text-decoration: none;
-			
+
 			&:hover {
-				opacity: .7;
+				opacity: $opacity;
 			}
 		}
 	}
