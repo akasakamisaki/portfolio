@@ -1,2 +1,2 @@
-body p a{color:blue;text-decoration:none}body p a:hover{opacity:.7}
+body{background-color:#1f1f1f;color:#fff;font-family:"Ubuntu",sans-serif}body .ja_f{font-family:"Noto Sans TC",sans-serif}body .r_color{color:red}body a{color:#fff;cursor:pointer;text-decoration:none}body a:hover{opacity:.7}body .wrapper #first_view{display:table;height:100vh;width:100vw}body .wrapper #first_view h1{display:table-cell;letter-spacing:.3em;text-align:center;vertical-align:middle}body .wrapper #first_view h1 .title{border-bottom:1px solid #ccc;display:inline-block;font-size:40px;padding-bottom:5px}body .wrapper #first_view h1 .sub_title{display:block;font-size:20px;margin-top:5px}
 /*# sourceMappingURL=style.css.map */

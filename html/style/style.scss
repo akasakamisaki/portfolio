@@ -1,20 +1,68 @@
 /**** 定数宣言 ****/
 //カラー
-	$main-color : blue;
-	$sub-color  : red;
+	$main-color   : #1f1f1f;
+	$sub-color    : #fff;
+	$text-color   : #fff;
+	$red_color    : #ff0000;
+	$border-color : #cccccc;
 //hover
-	$opacity : .7;
+	$opacity      : .7;
+//font
+	$es-font      : 'Ubuntu', sans-serif;				//英語
+	$js-font      : 'Noto Sans TC', sans-serif;	//日本語
 
-/**** ↓コンテンツscss↓ ****/
+/**** ↓ページscss↓ ****/
 body {
-	p {
-		a {
-			color: $main-color;
-			text-decoration: none;
+	/** 共通クラス **/
+	background-color: $main-color;	//デフォルト背景色
+	color: $text-color;							//デフォルト文字カラー
+	font-family: $es-font;
 
-			&:hover {
-				opacity: $opacity;
+	.ja_f {font-family: $js-font;}
+	.r_color {color: $red_color;}
+
+	a {
+		color: $text-color;
+		cursor: pointer;
+		text-decoration: none;
+
+		&:hover {
+			opacity: $opacity;
+		}
+	}
+	/** ↑共通クラス↑ **/
+
+	.wrapper {
+
+		//first-view
+		#first_view {
+			display: table;
+			height: 100vh;
+			width: 100vw;
+
+			h1 {
+				display: table-cell;
+				letter-spacing: .3em;
+				text-align: center;
+				vertical-align: middle;
+
+				.title {
+					border-bottom: 1px solid $border-color;
+					display: inline-block;
+					font-size: 40px;
+					padding-bottom: 5px;
+				}
+				.sub_title {
+					display: block;
+					font-size: 20px;
+					margin-top: 5px;
+				}
 			}
+		}
+
+		//コンテンツ
+		#main_cont {
+
 		}
 	}
 }
