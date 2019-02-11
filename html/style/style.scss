@@ -1,26 +1,34 @@
 /**** 定数宣言 ****/
 //カラー
-	$main-color   : #1f1f1f;
-	$sub-color    : #fff;
-	$text-color   : #fff;
-	$red_color    : #ff0000;
-	$border-color : #cccccc;
-//hover
+	$main-color   : #1f1f1f;										//ページメインカラー
+	$sub-color    : #424242;												//ページサブカラー
+	$text-color   : #fff;												//通常の文字色
+	$red_color    : #ff0000;										//ページ内で使用する赤
+	$border-color : #cccccc;										//ページ内のボーダーカラー
+
+//hover時のメイン動作
 	$opacity      : .7;
+
 //font
 	$es-font      : 'Ubuntu', sans-serif;				//英語
 	$js-font      : 'Noto Sans TC', sans-serif;	//日本語
+	$font-size    : 15px;												//通常のフォントサイズ
+/**** 定数宣言 ****/
 
-/*** 共通クラス ***/
+
+/*** ページ内共通クラス ***/
 body {
 
+	//ページの色、フォントの設定
 	background-color: $main-color;	//デフォルト背景色
 	color: $text-color;							//デフォルト文字カラー
 	font-family: $es-font;
+	font-size: $font-size;
 
 	.ja_f {font-family: $js-font;}
-	.r_color {color: $red_color;}
+	.my_color {color: $red_color;}
 
+	//リンクhover時
 	a {
 		color: $text-color;
 		cursor: pointer;
@@ -30,6 +38,80 @@ body {
 			opacity: $opacity;
 		}
 	}
+
+	//自己紹介コンテンツ共通クラス
+	#main_cont {
+		.cont_box {
+			display: flex;
+			height: 100vh;
+			justify-content: center;
+			width: 100vw;
+
+			//左右コンテンツ共通
+			.left_cont ,
+			.right_cont {
+				align-items: center;
+				display: flex;
+				height: 100%;
+				width: 50vw;
+
+				.cont_til {
+					color: $main-color;
+				}
+			}
+
+			//奇数の時
+			&:nth-child(odd) {
+				//左側コンテンツ(タイトル)
+				.left_cont {
+					background-color: $sub-color;
+					justify-content: center;
+					position: relative;
+
+					&::before {
+						border-color: $main-color transparent transparent transparent;
+						border-style: solid;
+						border-width: 100vh 0 0 100px;
+						content: '';
+						height: 0;
+						position: absolute;
+						right: 0;
+						width: 0
+					}
+				}
+				//右側コンテンツ(内容)
+				.right_cont {
+					border: 0;
+				}
+			}//--/.奇数の時
+
+			//偶数の時
+			&:nth-child(even) {
+				//左側コンテンツ(内容)
+				.left_cont {
+					border: 0;
+				}
+				//右側コンテンツ(タイトル)
+				.right_cont {
+					background-color: $sub-color;
+					justify-content: center;
+					position: relative;
+
+					&::before {
+						border-color: $main-color transparent transparent transparent;
+						border-style: solid;
+						border-width: 100vh 100px 0 0;
+						content: '';
+						height: 0;
+						left: 0;
+						position: absolute;
+						width: 0
+					}
+				}
+			}//--/.偶数の時
+
+		}//--/.cont_box
+	}//--#main_cont
 }
 
 /**** ↓ページscss↓ ****/
@@ -38,8 +120,34 @@ body {
 
 	.wrapper {
 
+		//スクロール用ボタン
+		.scroll_btn {
+			border: 1px solid #fff;
+			border-radius: 100%;
+			bottom: 100px;
+			cursor: pointer;
+			display: table;
+			height: 50px;
+			left: 50%;
+			position: fixed;
+			right: 0;
+			text-align: center;
+			transform: translate(-50%,-50%);
+			width: 50px;
+			z-index: 9999;
+
+			>span {
+				font-size: 12px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+
 		//first-view
 		#first_view {
+			border-bottom: 1px solid $border-color;
+			border-top: 1px solid $border-color;
+			box-sizing: border-box;
 			display: table;
 			height: 100vh;
 			width: 100vw;
@@ -64,10 +172,12 @@ body {
 			}
 		}
 
-		//コンテンツ
+		//自己紹介コンテンツ
 		#main_cont {
+			.cont_box {
 
-		}
+			}//--/.cont_box
+		}//--#main_cont
 	}
 }
 
@@ -101,4 +211,15 @@ body {
 			padding: 5px;
 		}
 	}
+}
+
+/*** JS用class ***/
+body {
+
+	//スクロール禁止
+	&._no_scroll {
+		overflow: hidden;
+	}
+
+
 }
