@@ -15,13 +15,17 @@ window.onload = function(){
 	//TODO セクションごとの位置を取得したほうがいいのでは？
 	//TODO 普通にアニメーションもつけたいよね
 	let
-		 $scroll_point = document.getElementsByClassName("_scroll")[0]
-		,$screen_height = window.innerHeight;
+		 $main          = document.getElementById("main_cont")
+		,$scroll_point  = document.getElementsByClassName("_scroll")[0]      //スクロールボタン取得
+		,$target_height = $main.getElementsByTagName("section")[0].clientHeight //要素の高さ取得
+		,$my_posiion    = document.documentElement.scrollTop                 //自分のスクロールポジション
+		,$scroll_position
+		;
 
-		console.log($screen_height);
-
+		//TODO 数字として認識させる 
 	function contScroll() {
-		scrollBy(0,$screen_height);
+		$scroll_position = $my_posiion + $target_height;
+		scrollBy(0,$scroll_position);
 	}
 
 	/* イベントリスナ */
